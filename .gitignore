@@ -1,1 +1,40 @@
-app/config.py
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+*.env
+.env
+venv/
+ENV/
+env/
+.Python
+
+# Virtual environments
+.venv/
+.venv.bak/
+env.bak/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Flask/Misc
+instance/
+*.sqlite
+*.log
+
+# PyCharm
+.idea/
+
+# Other
+*.swp
+*.bak
+*.tmp
+*.orig
