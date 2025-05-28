@@ -1,7 +1,11 @@
-from flask import Blueprint, request, jsonify, current_app
+from flask import Blueprint, request, jsonify
 from app.services.rewritetext import RewriteService
+from app.config import Config
 
 bp = Blueprint('routes', __name__)
+cfg = Config()
+api_token = cfg.HUGGINGFACE_API_TOKEN
+
 
 @bp.route('/rewrite', methods=['POST'])
 def rewrite_text():
@@ -16,7 +20,6 @@ def rewrite_text():
         return jsonify({"error": "Текст перевищує ліміт у 250 символів."}), 413
 
     # Ініціалізуємо сервіс
-    api_token = current_app.config["HUGGINGFACE_API_TOKEN"]
     rewriter = RewriteService(api_token=api_token)
 
     rewritten = rewriter.rewrite(input_text)
