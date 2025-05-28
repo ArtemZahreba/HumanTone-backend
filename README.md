@@ -16,7 +16,7 @@
    ```bash
    git clone https://github.com/your-username/HumanTone-backend.git
    cd HumanTone-backend
-```
+    ```
 
 2. Створити віртуальне середовище:
 
