@@ -1,56 +1,60 @@
 
 # HumanTone — AI Text Humanizer ✨
 
-**HumanTone** — це простий REST API сервіс, який приймає AI-згенерований текст і переформульовує його у більш природний, людський варіант.
+**HumanTone** is a simple REST API service that takes AI-generated text and rewrites it into a more natural, human-like version.
 
-## 🚀 Можливості
+## 🔗 Live Demo
 
-- Переписує текст, щоб він звучав більш природно та "по-людськи"
-- Працює через API `/rewrite`
-- Обмеження довжини тексту — 500 символів
-- Працює на базі моделі [HuggingFaceH4/zephyr-7b-beta](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta)
+🌐 [https://huntly.infy.uk](https://huntly.infy.uk)
 
-## 📦 Встановлення
+## 🚀 Features
 
-1. Клонувати репозиторій:
+- Rewrites text to make it sound more natural and "human"
+- Accessible via the `/rewrite` API endpoint
+- Input text limit: 500 characters
+- Powered by [HuggingFaceH4/zephyr-7b-beta](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta)
+
+## 📦 Installation
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/HumanTone-backend.git
    cd HumanTone-backend
     ```
 
-2. Створити віртуальне середовище:
+2. Create a virtual environment:
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # для Linux/macOS
-   venv\Scripts\activate     # для Windows
+   source venv/bin/activate  # for Linux/macOS
+   venv\Scripts\activate     # for Windows
    ```
 
-3. Встановити залежності:
+3. Install the dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Створити `.env` файл з токеном Hugging Face:
+4. Create a `.env` file and add your Hugging Face API token:
 
    ```
    HF_API_TOKEN=your_huggingface_token_here
    ```
 
-## 🔧 Запуск сервера
+## 🔧 Running the Server
 
 ```bash
 python run.py
 ```
 
-Сервер буде запущено на `http://127.0.0.1:5000/`
+The server will run at `http://127.0.0.1:5000/`
 
-## 📬 Використання API
+## 📬 API Usage
 
 ### POST `/rewrite`
 
-**Запит:**
+**Request:**
 
 ```json
 {
@@ -58,7 +62,7 @@ python run.py
 }
 ```
 
-**Відповідь:**
+**Response:**
 
 ```json
 {
@@ -66,9 +70,9 @@ python run.py
 }
 ```
 
-## 🧪 Тестування
+## 🧪 Testing
 
-Можна тестувати через Postman або curl:
+You can test the endpoint via Postman or curl:
 
 ```bash
 curl -X POST http://127.0.0.1:5000/rewrite \
@@ -76,15 +80,15 @@ curl -X POST http://127.0.0.1:5000/rewrite \
      -d '{"text": "Your AI-generated input here"}'
 ```
 
-## 🛠 Технології
+## 🛠 Technologies
 
 * Python 3.10+
 * Flask
 * HuggingFace Hub (via `huggingface_hub`)
 * dotenv
 
-## ⚠️ Обмеження
+## ⚠️ Limitations
 
-* Максимум 500 символів на запит
-* Без реєстрації (MVP)
-* Модель не ідеальна — можливі неточності
+* Max 500 characters per request
+* No user authentication (MVP stage)
+* The model might produce inaccurate or imperfect rewrites
